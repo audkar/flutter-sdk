@@ -14,4 +14,5 @@ RUN sdkmanager "build-tools;28.0.3" "platforms;android-28" "platform-tools"
 RUN FLUTTER_VERSION="v1.0.0" \
     && wget -q https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_"$FLUTTER_VERSION"-stable.tar.xz -O flutter.tar.xz \
     && tar xf flutter.tar.xz -C /opt \
-    && rm flutter.tar.xz
+    && rm flutter.tar.xz \
+    && chmod -R 777 /opt/flutter
