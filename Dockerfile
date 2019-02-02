@@ -8,7 +8,7 @@ RUN apk update \
     && rm -rf /tmp/* \
     && rm -rf /var/cache/apk/*
 
-RUN sdkmanager "build-tools;28.0.3" "platforms;android-28" "platform-tools"
+RUN sdkmanager "build-tools;28.0.3" "platforms;android-27" "platforms;android-28" "platform-tools"
 
 #https://flutter.io/docs/development/tools/sdk/archive?tab=linux
 RUN FLUTTER_VERSION="v1.0.0" \
@@ -16,3 +16,5 @@ RUN FLUTTER_VERSION="v1.0.0" \
     && tar xf flutter.tar.xz -C /opt \
     && rm flutter.tar.xz \
     && chmod -R 777 /opt/flutter
+
+RUN apk add tar
