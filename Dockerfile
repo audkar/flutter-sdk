@@ -4,17 +4,15 @@ ENV PATH=$PATH:/opt/flutter/bin
 
 RUN apk update \
     && apk upgrade \
-    && apk add --no-cache glu \
+    && apk add --no-cache glu tar xz \
     && rm -rf /tmp/* \
     && rm -rf /var/cache/apk/*
 
 RUN sdkmanager "build-tools;29.0.2" "platforms;android-29" "platform-tools"
 
 #https://flutter.io/docs/development/tools/sdk/archive?tab=linux
-RUN FLUTTER_VERSION="v1.9.1+hotfix.4" \
+RUN FLUTTER_VERSION="v1.9.1+hotfix.6" \
     && wget -q https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_"$FLUTTER_VERSION"-stable.tar.xz -O flutter.tar.xz \
     && tar xf flutter.tar.xz -C /opt \
     && rm flutter.tar.xz \
     && chmod -R 777 /opt/flutter
-
-RUN apk add tar
