@@ -11,7 +11,7 @@ RUN apk update \
 RUN sdkmanager "build-tools;29.0.3" "platforms;android-29" "platform-tools"
 
 #https://flutter.io/docs/development/tools/sdk/archive?tab=linux
-RUN FLUTTER_VERSION="1.17.5" \
+RUN FLUTTER_VERSION="1.20.2" \
     && wget -q https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_"$FLUTTER_VERSION"-stable.tar.xz -O flutter.tar.xz \
     && tar xf flutter.tar.xz -C /opt \
     && rm flutter.tar.xz \
