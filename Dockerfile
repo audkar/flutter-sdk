@@ -4,7 +4,7 @@ ENV PATH=$PATH:/opt/flutter/bin
 
 RUN apk update \
     && apk upgrade \
-    && apk add --no-cache glu tar xz \
+    && apk add --no-cache glu tar xz bash git \
     && rm -rf /tmp/* \
     && rm -rf /var/cache/apk/*
 
